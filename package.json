@@ -1,0 +1,23 @@
+{
+  "name": "generate-mock-data",
+  "version": "0.0.1",
+  "description": "Easily generate mock data files for your e2e tests",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhroemer/generate-mock-data.git"
+  },
+  "keywords": [
+    "CLI",
+    "mock",
+    "data",
+    "e2e"
+  ],
+  "author": "Jens Rømer Hesselbjerg",
+  "bugs": {
+    "url": "https://github.com/jhroemer/generate-mock-data/issues"
+  },
+  "homepage": "https://github.com/jhroemer/generate-mock-data#readme"
+}
