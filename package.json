@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Easily generate mock data files for your e2e tests",
   "scripts": {
+    "start": "tsx src/cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/jhroemer/generate-mock-data/issues"
   },
-  "homepage": "https://github.com/jhroemer/generate-mock-data#readme"
+  "homepage": "https://github.com/jhroemer/generate-mock-data#readme",
+  "devDependencies": {
+    "tsx": "4.19.3",
+    "typescript": "5.7.3"
+  },
+  "dependencies": {
+    "@clack/prompts": "0.10.0",
+    "cac": "6.7.14"
+  }
 }
