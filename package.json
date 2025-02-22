@@ -35,5 +35,8 @@
     "@clack/prompts": "0.10.0",
     "cac": "6.7.14",
     "write-pretty-file": "0.2.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
