@@ -1,7 +1,7 @@
 import path from "node:path";
-import fs from "node:fs";
 import { intro, outro, text } from "@clack/prompts";
 import cac from "cac";
+import writePrettyFile from "write-pretty-file";
 
 const cli = cac("generate-mock-data");
 
@@ -36,7 +36,7 @@ cli.command("").action(async () => {
     export default ${variableName};
   `;
 
-  fs.writeFileSync(filePath, fileContent);
+  await writePrettyFile(filePath, fileContent);
 
   outro("File created successfully!");
 });
