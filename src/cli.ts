@@ -1,4 +1,4 @@
-import path from "node:path";
+import * as path from "node:path";
 import { intro, outro, text } from "@clack/prompts";
 import cac from "cac";
 import writePrettyFile from "write-pretty-file";
