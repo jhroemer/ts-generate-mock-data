@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsx src/cli.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,9 @@
   "dependencies": {
     "@clack/prompts": "0.10.0",
     "cac": "6.7.14",
+    "filenamify": "6.0.0",
+    "nanoid": "5.1.2",
+    "tempy": "3.1.0",
     "write-pretty-file": "0.2.0"
   },
   "engines": {
