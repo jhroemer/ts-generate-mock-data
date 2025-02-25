@@ -2,8 +2,10 @@ import path from "node:path";
 import { readFile, readdir } from "node:fs/promises";
 import { execa } from "execa";
 import { expect, test } from "vitest";
+import { temporaryDirectory } from "tempy";
+import { getBinPath } from "get-bin-path";
 
-const directory = process.cwd();
+const directory = temporaryDirectory();
 const outputDir = "./output";
 
 const getMockDataFileContent = async () => {
@@ -17,7 +19,15 @@ const getMockDataFileContent = async () => {
 };
 
 test("Generate data", async () => {
-  const subprocess = execa`node dist/cli.js --output-dir output`;
+  const binPath = await getBinPath();
+
+  if (!binPath) {
+    throw new Error("binPath is not defined");
+  }
+
+  const subprocess = execa({
+    cwd: directory,
+  })`node ${binPath} --output-dir ${outputDir}`;
 
   for await (const line of subprocess) {
     if (line.includes("Enter URL")) {
