@@ -8,32 +8,37 @@ import createVariableName from "./createVariableName";
 
 const cli = cac("generate-mock-data");
 
-cli.command("").action(async () => {
-  intro(`Generate mock data`);
+cli
+  .command("")
+  .option("--output-dir <dir>", "The directory to save mock data files", {
+    default: ".",
+  })
+  .action(async ({ outputDir }) => {
+    intro(`Generate mock data`);
 
-  const method = "GET";
+    const method = "GET";
 
-  const url = (await text({
-    message: `Enter URL`,
-  })) as Awaited<string>;
+    const url = (await text({
+      message: `Enter URL`,
+    })) as Awaited<string>;
 
-  const response = await fetch(url);
-  const parsedResponse = await response.json();
+    const response = await fetch(url);
+    const parsedResponse = await response.json();
 
-  if (!response.ok) {
-    outro(`Failed to fetch data from ${url} with status ${response.status}`);
-  }
+    if (!response.ok) {
+      outro(`Failed to fetch data from ${url} with status ${response.status}`);
+    }
 
-  const randomValue = nanoid(7);
-  const fileName = `${filenamify(`${method}_${url}`, {
-    maxLength: 75,
-    replacement: "_",
-  })}_${randomValue}`;
-  const variableName = createVariableName(fileName);
+    const randomValue = nanoid(7);
+    const fileName = `${filenamify(`${method}_${url}`, {
+      maxLength: 75,
+      replacement: "_",
+    })}_${randomValue}`;
+    const variableName = createVariableName(fileName);
 
-  const filePath = path.join(".", `${fileName}.ts`);
+    const filePath = path.join(outputDir, `${fileName}.ts`);
 
-  const fileContent = `const ${variableName} = {
+    const fileContent = `const ${variableName} = {
       method: '${method}',
       url: '${url}',
       statusCode: ${response.status},
@@ -43,10 +48,10 @@ cli.command("").action(async () => {
     export default ${variableName};
   `;
 
-  await writePrettyFile(filePath, fileContent);
+    await writePrettyFile(filePath, fileContent);
 
-  outro("File created successfully!");
-});
+    outro(`File created successfully at ${filePath}`);
+  });
 
 cli.help();
 
