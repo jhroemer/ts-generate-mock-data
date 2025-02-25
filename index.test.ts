@@ -1,5 +1,20 @@
+import path from "node:path";
+import { readFile, readdir } from "node:fs/promises";
 import { execa } from "execa";
-import { test } from "vitest";
+import { expect, test } from "vitest";
+
+const directory = process.cwd();
+const outputDir = "./outputdir";
+
+async function getFixtureFileContent() {
+  const fixtureDir = await readdir(path.join(directory, outputDir));
+  const unprocessedFixtureFile = await readFile(
+    path.join(directory, outputDir, fixtureDir[0])
+  );
+  const fixtureFile = unprocessedFixtureFile.toString();
+
+  return fixtureFile;
+}
 
 test("Generate data", async () => {
   const subprocess = execa`npm run start`;
@@ -10,4 +25,7 @@ test("Generate data", async () => {
       subprocess.stdin?.end();
     }
   }
+
+  const fixtureFileContent = await getFixtureFileContent();
+  expect(fixtureFileContent).toMatchSnapshot();
 });

@@ -29,7 +29,8 @@ cli
       outro(`Failed to fetch data from ${url} with status ${response.status}`);
     }
 
-    const randomValue = nanoid(7);
+    const randomValue =
+      process.env["RANDOM_VALUE_TEST_REPLACEMENT"] ?? nanoid(7);
     const fileName = `${filenamify(`${method}_${url}`, {
       maxLength: 75,
       replacement: "_",
