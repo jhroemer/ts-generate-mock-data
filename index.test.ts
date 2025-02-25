@@ -6,15 +6,15 @@ import { expect, test } from "vitest";
 const directory = process.cwd();
 const outputDir = "./output";
 
-async function getFixtureFileContent() {
-  const fixtureDir = await readdir(path.join(directory, outputDir));
-  const unprocessedFixtureFile = await readFile(
-    path.join(directory, outputDir, fixtureDir[0])
+const getMockDataFileContent = async () => {
+  const fileDirectory = await readdir(path.join(directory, outputDir));
+  const unprocessedFile = await readFile(
+    path.join(directory, outputDir, fileDirectory[0])
   );
-  const fixtureFile = unprocessedFixtureFile.toString();
+  const mockDataFile = unprocessedFile.toString();
 
-  return fixtureFile;
-}
+  return mockDataFile;
+};
 
 test("Generate data", async () => {
   const subprocess = execa`node dist/cli.js --output-dir output`;
@@ -26,6 +26,6 @@ test("Generate data", async () => {
     }
   }
 
-  const fixtureFileContent = await getFixtureFileContent();
-  expect(fixtureFileContent).toMatchSnapshot();
+  const mockDataFileContent = await getMockDataFileContent();
+  expect(mockDataFileContent).toMatchSnapshot();
 });
