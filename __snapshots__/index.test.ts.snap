@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Generate data 1`] = `
+"const GET_http_localhost_9090_hello_world_123 = {
+  method: "GET",
+  url: "http://localhost:9090/hello-world",
+  statusCode: 200,
+  response: [{ hello: "world" }],
+};
+
+export default GET_http_localhost_9090_hello_world_123;
+"
+`;

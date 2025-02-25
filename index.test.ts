@@ -4,7 +4,7 @@ import { execa } from "execa";
 import { expect, test } from "vitest";
 
 const directory = process.cwd();
-const outputDir = "./outputdir";
+const outputDir = "./output";
 
 async function getFixtureFileContent() {
   const fixtureDir = await readdir(path.join(directory, outputDir));
@@ -17,7 +17,7 @@ async function getFixtureFileContent() {
 }
 
 test("Generate data", async () => {
-  const subprocess = execa`npm run start`;
+  const subprocess = execa`node dist/cli.js --output-dir output`;
 
   for await (const line of subprocess) {
     if (line.includes("Enter URL")) {

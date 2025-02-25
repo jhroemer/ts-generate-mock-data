@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start": "tsx src/cli --output-dir outputdir",
-    "test": "vitest",
+    "start": "tsx src/cli --output-dir output",
+    "test": "npm run build && chmod +x dist/cli.js && vitest",
     "test:server": "tsx mock/server"
   },
   "repository": {
