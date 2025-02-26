@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as path from "node:path";
 import { intro, outro, text } from "@clack/prompts";
 import { cac } from "cac";
