@@ -1,10 +1,10 @@
 import * as path from "node:path";
 import { intro, outro, text } from "@clack/prompts";
-import cac from "cac";
+import { cac } from "cac";
 import writePrettyFile from "write-pretty-file";
 import { nanoid } from "nanoid";
 import filenamify from "filenamify";
-import createVariableName from "./createVariableName";
+import createVariableName from "./createVariableName.js";
 
 const cli = cac("generate-mock-data");
 
@@ -29,7 +29,8 @@ cli
       outro(`Failed to fetch data from ${url} with status ${response.status}`);
     }
 
-    const randomValue = nanoid(7);
+    const randomValue =
+      process.env["RANDOM_VALUE_TEST_REPLACEMENT"] ?? nanoid(7);
     const fileName = `${filenamify(`${method}_${url}`, {
       maxLength: 75,
       replacement: "_",

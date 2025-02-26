@@ -6,10 +6,12 @@
   "files": [
     "dist"
   ],
+  "bin": "dist/cli.js",
   "scripts": {
-    "build": "tsc",
-    "start": "tsx src/cli.ts --output-dir outputdir",
-    "test": "vitest"
+    "build": "rm -rf dist && tsc",
+    "start": "tsx src/cli --output-dir output",
+    "test": "npm run build && chmod +x dist/cli.js && vitest",
+    "test:server": "tsx mock/server"
   },
   "repository": {
     "type": "git",
@@ -34,10 +36,15 @@
   },
   "dependencies": {
     "@clack/prompts": "0.10.0",
+    "@mswjs/http-middleware": "0.10.3",
     "cac": "6.7.14",
+    "execa": "9.5.2",
     "filenamify": "6.0.0",
+    "get-bin-path": "11.0.0",
+    "msw": "2.7.3",
     "nanoid": "5.1.2",
     "tempy": "3.1.0",
+    "vitest": "3.0.6",
     "write-pretty-file": "0.2.0"
   },
   "engines": {
