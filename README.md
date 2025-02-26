@@ -1,6 +1,15 @@
 # generate-mock-data
 
-Compact CLI for generating- and saving mock data to TypeScript files
+- 💻 Instantly generate mock data through a CLI - just follow the prompts and copy and paste your endpoint.
+- ✍️ Data is saved in TypeScript files for seamless auto-import and easier tracking of unused files/variables.
+- 🤓 Generates unique, readable file- and variable names.
+
+> [!IMPORTANT]  
+> Currently the CLI is for safe http methods, and only `GET` is currently supported.
+
+## Summary
+
+WIP
 
 ## Local dev
 
