@@ -1,4 +1,4 @@
-# generate-mock-data
+# ts-generate-mock-data
 
 - 💻 Instantly generate mock data, from actual endpoint responses, through a CLI - just follow the prompts and copy and paste your endpoint.
 - ✍️ Data is saved in TypeScript files for seamless auto-import and easier tracking of unused files/variables.

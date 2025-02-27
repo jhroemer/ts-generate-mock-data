@@ -8,7 +8,7 @@ import { nanoid } from "nanoid";
 import filenamify from "filenamify";
 import createVariableName from "./createVariableName.js";
 
-const cli = cac("generate-mock-data");
+const cli = cac("ts-generate-mock-data");
 
 cli
   .command("")
