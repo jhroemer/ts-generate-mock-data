@@ -7,9 +7,33 @@
 > [!IMPORTANT]  
 > Currently the CLI is for safe http methods, and only `GET` is currently supported.
 
-## Summary
+## API
 
-WIP
+`ts-generate-mock-data` is both a CLI and a JavaScript library
+
+### CLI
+
+Usage:
+```console
+  $ ts-generate-mock-data
+
+Options:
+  --output-dir <dir>           The directory to save the mock data files (default: .)
+  -h, --help                   Display this message
+  -v, --version                Display version number
+```
+
+Example usage
+
+```console
+ts-generate-mock-data --output-dir ./output
+```
+
+### Library
+
+```console
+npm install --save-dev ts-generate-mock-data
+```
 
 ## Local dev
 
