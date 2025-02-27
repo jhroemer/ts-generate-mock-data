@@ -37,5 +37,8 @@ test("Generate data", async () => {
   }
 
   const mockDataFileContent = await getMockDataFileContent();
-  expect(mockDataFileContent).toMatchSnapshot();
+  expect(
+    mockDataFileContent,
+    "Did you remember to set the RANDOM_VALUE_TEST_REPLACEMENT env varable to '123'?"
+  ).toMatchSnapshot();
 });
