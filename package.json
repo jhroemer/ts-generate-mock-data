@@ -11,7 +11,8 @@
     "build": "rm -rf dist && tsc",
     "start": "tsx src/cli --output-dir output",
     "test": "npm run build && chmod +x dist/cli.js && vitest",
-    "test:server": "tsx mock/server"
+    "test:server": "tsx mock/server",
+    "release": "npm run build && np"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/jhroemer/ts-generate-mock-data#readme",
   "devDependencies": {
     "@types/node": "22.13.5",
+    "np": "10.2.0",
     "prettier": "3.5.2",
     "tsx": "4.19.3",
     "typescript": "5.7.3"

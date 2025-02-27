@@ -14,6 +14,7 @@
 ### CLI
 
 Usage:
+
 ```console
   $ ts-generate-mock-data
 
@@ -47,3 +48,9 @@ npm run test
 ```
 
 To ensure distinctiveness, a unique identifier is added to both mock file names and variable names. To achieve deterministic test results, the environment variable `RANDOM_VALUE_TEST_REPLACEMENT` must be set to `123`.
+
+### Release
+
+```console
+npm run release
+```
