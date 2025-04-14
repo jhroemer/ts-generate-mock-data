@@ -43,7 +43,7 @@
     "get-bin-path": "11.0.0"
   },
   "dependencies": {
-    "@clack/prompts": "0.10.0",
+    "@clack/prompts": "0.10.1",
     "cac": "6.7.14",
     "filenamify": "6.0.0",
     "nanoid": "5.1.5",
