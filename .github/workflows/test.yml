@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - main
-      - add-test-action
   pull_request:
 
 jobs:
