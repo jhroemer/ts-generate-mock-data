@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/node": "22.15.19",
     "np": "10.2.0",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "tsx": "4.20.3",
     "typescript": "5.8.3",
     "vitest": "3.2.4",
