@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/jhroemer/ts-generate-mock-data#readme",
   "devDependencies": {
-    "@types/node": "24.0.10",
+    "@types/node": "24.1.0",
     "np": "10.2.0",
     "prettier": "3.6.2",
     "tsx": "4.20.3",
