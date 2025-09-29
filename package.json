@@ -46,7 +46,7 @@
     "@clack/prompts": "0.11.0",
     "cac": "6.7.14",
     "filenamify": "6.0.0",
-    "nanoid": "5.1.5",
+    "nanoid": "5.1.6",
     "write-pretty-file": "0.2.0"
   },
   "engines": {
