@@ -45,7 +45,7 @@
   "dependencies": {
     "@clack/prompts": "0.11.0",
     "cac": "6.7.14",
-    "filenamify": "6.0.0",
+    "filenamify": "7.0.1",
     "nanoid": "5.1.6",
     "write-pretty-file": "0.2.0"
   },
