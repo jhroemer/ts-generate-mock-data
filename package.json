@@ -35,7 +35,7 @@
     "prettier": "3.6.2",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
-    "vitest": "3.2.4",
+    "vitest": "4.0.8",
     "execa": "9.6.0",
     "msw": "2.11.6",
     "@mswjs/http-middleware": "0.10.3",
