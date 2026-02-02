@@ -25,6 +25,7 @@
     "e2e"
   ],
   "author": "Jens Rømer Hesselbjerg",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jhroemer/ts-generate-mock-data/issues"
   },
